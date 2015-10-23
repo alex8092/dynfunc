@@ -12,11 +12,12 @@ class Test
 public:
 	explicit Test() {
 		MemberFunction<Test, int, int> func_test(this, &Test::test_func2);
-		Function<void>	*test_func_container = dynamic_cast<Function<void>*>(&func_test);
-		test_func_container->call<int>(6);
+		Function<int, int>	*test_func_container = dynamic_cast<Function<int, int>*>(&func_test);
+		test_func_container->call(9);
 	}
 
 	int	test_func2(int c) {
+		std::cout << "this: " << this << std::endl;
 		std::cout << "testing: " << c << std::endl;
 		return 0;
 	}

@@ -1,2 +1,2 @@
 all:
-	g++ main.cpp -std=c++1y -Wno-pmf-conversions
+	g++ -g3 main.cpp -std=c++1y
